@@ -2,18 +2,18 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 
-const ORG_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"HEMguiden\",\"url\":\"https://hemguiden.vercel.app\",\"logo\":\"https://hemguiden.vercel.app/favicon.ico\",\"description\":\"Oberoende jämförelsetjänst för svenska konsumenter inom försäkring.\",\"foundingDate\":\"2026\",\"inLanguage\":\"sv-SE\",\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"customer support\",\"url\":\"https://hemguiden.vercel.app/kontakt\"}}";
-const WEB_PAGE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Hemförsäkring för nyblivna husägare 2026\",\"description\":\"Skydda ditt nya hem med rätt hemförsäkring ✓ Jämför 2026 års bästa alternativ och spara pengar!\",\"url\":\"https://hemguiden.vercel.app\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"inLanguage\":\"sv-SE\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"HEMguiden\",\"url\":\"https://hemguiden.vercel.app\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Hem\",\"item\":\"https://hemguiden.vercel.app\"}]}}";
-const ITEM_LIST_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Hemförsäkring 2026 för nyblivna husägare — Jämförelse 2026\",\"description\":\"Jämför hemförsäkringar från ledande leverantörer för att skydda ditt nya hem.\",\"numberOfItems\":7,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Folksam\",\"url\":\"https://www.folksam.se\",\"description\":\"Stort utbud och kundanpassade lösningar\",\"feesAndCommissionsSpecification\":\"från 99 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"117\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Länsförsäkringar\",\"url\":\"https://www.lansforsakringar.se\",\"description\":\"Lokalt förankrade och personlig service\",\"feesAndCommissionsSpecification\":\"från 110 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"784\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Trygg-Hansa\",\"url\":\"https://www.trygghansa.se\",\"description\":\"Snabb skadehantering och digitala verktyg\",\"feesAndCommissionsSpecification\":\"från 105 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"461\"}}},{\"@type\":\"ListItem\",\"position\":4,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"If Skadeförsäkring\",\"url\":\"https://www.if.se\",\"description\":\"Anpassningsbara försäkringar och lojalitetsrabatter\",\"feesAndCommissionsSpecification\":\"från 115 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"739\"}}},{\"@type\":\"ListItem\",\"position\":5,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Moderna Försäkringar\",\"url\":\"https://www.modernaforsakringar.se\",\"description\":\"Innovativa lösningar och prisvärda alternativ\",\"feesAndCommissionsSpecification\":\"från 95 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.4\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"265\"}}},{\"@type\":\"ListItem\",\"position\":6,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Dina Försäkringar\",\"url\":\"https://www.dina.se\",\"description\":\"Kundnära och personlig service\",\"feesAndCommissionsSpecification\":\"från 100 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.3\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"635\"}}},{\"@type\":\"ListItem\",\"position\":7,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"ICA Försäkring\",\"url\":\"https://www.ica.se/forsakring\",\"description\":\"Kundbonus och enkel skadeanmälan\",\"feesAndCommissionsSpecification\":\"från 90 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.2\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"249\"}}}]}";
-const ARTICLE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Hemförsäkring 2026 för nyblivna husägare\",\"description\":\"Jämför hemförsäkringar från ledande leverantörer för att skydda ditt nya hem.\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"author\":{\"@type\":\"Organization\",\"name\":\"HEMguiden\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"HEMguiden\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://hemguiden.vercel.app\"}}";
-const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Vilken hemförsäkring är bäst i Sverige?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Det beror på dina specifika behov och budget. Jämför olika försäkringsbolags erbjudanden och läs kundrecensioner.\"}}]}";
+const ORG_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Hemguiden\",\"url\":\"https://hemguiden.vercel.app\",\"logo\":\"https://hemguiden.vercel.app/favicon.ico\",\"description\":\"Oberoende jämförelsetjänst för svenska konsumenter inom försäkring.\",\"foundingDate\":\"2026\",\"inLanguage\":\"sv-SE\",\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"customer support\",\"url\":\"https://hemguiden.vercel.app/kontakt\"}}";
+const WEB_PAGE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Jämför hemförsäkringar för husägare 2026\",\"description\":\"Jämför hemförsäkringar ✓ Skydda ditt hem 2026 ✓ Hitta bästa priset och täckningen för nya husägare.\",\"url\":\"https://hemguiden.vercel.app\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"inLanguage\":\"sv-SE\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Hemguiden\",\"url\":\"https://hemguiden.vercel.app\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Hem\",\"item\":\"https://hemguiden.vercel.app\"}]}}";
+const ITEM_LIST_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"ItemList\",\"name\":\"Hemförsäkring för nyblivna husägare 2026 — Jämförelse 2026\",\"description\":\"Jämför bästa hemförsäkringarna för husägare och hitta bästa priset.\",\"numberOfItems\":7,\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Folksam\",\"url\":\"https://www.folksam.se\",\"description\":\"Omfattande skydd med personliga tillval\",\"feesAndCommissionsSpecification\":\"från 150 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.8\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"117\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"IF Försäkring\",\"url\":\"https://www.if.se\",\"description\":\"Snabb skadehantering och digitala verktyg\",\"feesAndCommissionsSpecification\":\"från 160 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"187\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Trygg-Hansa\",\"url\":\"https://www.trygghansa.se\",\"description\":\"Brett skydd och bra villkor\",\"feesAndCommissionsSpecification\":\"från 155 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"461\"}}},{\"@type\":\"ListItem\",\"position\":4,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Länsförsäkringar\",\"url\":\"https://www.lansforsakringar.se\",\"description\":\"Lokal expertis med personlig service\",\"feesAndCommissionsSpecification\":\"från 145 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.7\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"784\"}}},{\"@type\":\"ListItem\",\"position\":5,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Moderna Försäkringar\",\"url\":\"https://www.modernaforsakringar.se\",\"description\":\"Innovativa lösningar för moderna hem\",\"feesAndCommissionsSpecification\":\"från 140 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"265\"}}},{\"@type\":\"ListItem\",\"position\":6,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"Dina Försäkringar\",\"url\":\"https://www.dina.se\",\"description\":\"Personlig service och anpassade paket\",\"feesAndCommissionsSpecification\":\"från 150 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.6\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"635\"}}},{\"@type\":\"ListItem\",\"position\":7,\"item\":{\"@type\":\"FinancialProduct\",\"name\":\"ICA Försäkring\",\"url\":\"https://www.icaforsakring.se\",\"description\":\"Kombinerade försäkringar med ICA-rabatt\",\"feesAndCommissionsSpecification\":\"från 135 kr/mån\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":\"4.5\",\"bestRating\":\"5\",\"worstRating\":\"1\",\"ratingCount\":\"249\"}}}]}";
+const ARTICLE_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Hemförsäkring för nyblivna husägare 2026\",\"description\":\"Jämför bästa hemförsäkringarna för husägare och hitta bästa priset.\",\"datePublished\":\"2026-06-24\",\"dateModified\":\"2026-06-24\",\"author\":{\"@type\":\"Organization\",\"name\":\"Hemguiden\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Hemguiden\"},\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://hemguiden.vercel.app\"}}";
+const FAQ_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Vilken hemförsäkring är bäst för husägare?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Det beror på dina behov och budget. Jämför olika försäkringar och läs recensioner för att hitta den bästa för dig.\"}}]}";
 
 export async function getStaticProps() {
   var now = new Date();
   var year = now.getFullYear();
   var month = now.toLocaleDateString('sv-SE', { month: 'long' });
   var updated = now.toLocaleDateString('sv-SE', { year: 'numeric', month: 'long', day: 'numeric' });
-  var fallback = [{"name":"Folksam","url":"https://www.folksam.se","description":"Stort utbud och kundanpassade lösningar","badge":"Bäst totalt","score":"4.8","price":"från 99 kr/mån","pros":["Omfattande skydd","Bra kundservice","Miljömedvetna val"]},{"name":"Länsförsäkringar","url":"https://www.lansforsakringar.se","description":"Lokalt förankrade och personlig service","badge":null,"score":"4.7","price":"från 110 kr/mån","pros":["Starkt lokalt stöd","Personlig rådgivning","Flexibla alternativ"]},{"name":"Trygg-Hansa","url":"https://www.trygghansa.se","description":"Snabb skadehantering och digitala verktyg","badge":null,"score":"4.6","price":"från 105 kr/mån","pros":["Snabb service","Digitala verktyg","Bra kundbetyg"]},{"name":"If Skadeförsäkring","url":"https://www.if.se","description":"Anpassningsbara försäkringar och lojalitetsrabatter","badge":null,"score":"4.5","price":"från 115 kr/mån","pros":["Anpassningsbar","Lojalitetsrabatter","Stark kundsupport"]},{"name":"Moderna Försäkringar","url":"https://www.modernaforsakringar.se","description":"Innovativa lösningar och prisvärda alternativ","badge":null,"score":"4.4","price":"från 95 kr/mån","pros":["Innovativa lösningar","Prisvärt","Bra kundnöjdhet"]},{"name":"Dina Försäkringar","url":"https://www.dina.se","description":"Kundnära och personlig service","badge":null,"score":"4.3","price":"från 100 kr/mån","pros":["Personlig service","Kundnära","Flexibla villkor"]},{"name":"ICA Försäkring","url":"https://www.ica.se/forsakring","description":"Kundbonus och enkel skadeanmälan","badge":null,"score":"4.2","price":"från 90 kr/mån","pros":["Kundbonus","Enkel anmälan","Prisvärd"]}];
+  var fallback = [{"name":"Folksam","url":"https://www.folksam.se","description":"Omfattande skydd med personliga tillval","badge":"Bäst totalt","score":"4.8","price":"från 150 kr/mån","pros":["Flexibla tillval","Bra kundsupport","Hållbarhet i fokus"]},{"name":"IF Försäkring","url":"https://www.if.se","description":"Snabb skadehantering och digitala verktyg","badge":null,"score":"4.7","price":"från 160 kr/mån","pros":["Enkel onlinehantering","Snabb skadehantering","Rabatter för nybyggda hus"]},{"name":"Trygg-Hansa","url":"https://www.trygghansa.se","description":"Brett skydd och bra villkor","badge":null,"score":"4.6","price":"från 155 kr/mån","pros":["Bra villkor","24/7 kundtjänst","Stark skadehantering"]},{"name":"Länsförsäkringar","url":"https://www.lansforsakringar.se","description":"Lokal expertis med personlig service","badge":null,"score":"4.7","price":"från 145 kr/mån","pros":["Lokal närvaro","Personlig service","Konkurrenskraftiga priser"]},{"name":"Moderna Försäkringar","url":"https://www.modernaforsakringar.se","description":"Innovativa lösningar för moderna hem","badge":null,"score":"4.5","price":"från 140 kr/mån","pros":["Innovativa lösningar","Bra för digitala hem","Flexibla försäkringspaket"]},{"name":"Dina Försäkringar","url":"https://www.dina.se","description":"Personlig service och anpassade paket","badge":null,"score":"4.6","price":"från 150 kr/mån","pros":["Personlig service","Anpassade paket","Kundnöjdhet i fokus"]},{"name":"ICA Försäkring","url":"https://www.icaforsakring.se","description":"Kombinerade försäkringar med ICA-rabatt","badge":null,"score":"4.5","price":"från 135 kr/mån","pros":["ICA-rabatt","Kombinerade försäkringslösningar","Bra kundsupport"]}];
   var items = fallback.slice();
 
   return {
@@ -54,16 +54,16 @@ export default function Home({ providers, year, month, updated }) {
 
   const TRACK_BASE = 'https://axiom-engine-production-54c3.up.railway.app/r';
   const SITE_SLUG = 'hemguiden';
-  const AffBtn = ({ url, name, primary }) => {
+  const AffBtn = ({ url, name, primary, network }) => {
     var href = TRACK_BASE && TRACK_BASE.startsWith('http')
-      ? TRACK_BASE + '?p=' + encodeURIComponent(name) + '&url=' + encodeURIComponent(url) + '&site=' + SITE_SLUG
+      ? TRACK_BASE + '?p=' + encodeURIComponent(name) + '&url=' + encodeURIComponent(url) + '&site=' + SITE_SLUG + (network && network !== 'adtraction' ? '&network=' + encodeURIComponent(network) : '')
       : url;
     return (
       <a href={href} target="_blank" rel="noopener noreferrer sponsored"
         style={{ display:'inline-block', background: primary ? pc : '#0f172a', color:'#fff',
           padding:'11px 22px', borderRadius:9, fontWeight:700, fontSize:14,
           textDecoration:'none', whiteSpace:'nowrap', transition:'opacity .15s' }}>
-        Välj {name} →
+        {network === 'amazon' ? 'Köp på Amazon →' : 'Välj ' + name + ' →'}
       </a>
     );
   };
@@ -82,23 +82,23 @@ export default function Home({ providers, year, month, updated }) {
   return (
     <>
       <Head>
-        <title>Hemförsäkring för nyblivna husägare 2026</title>
-        <meta name="description" content="Skydda ditt nya hem med rätt hemförsäkring ✓ Jämför 2026 års bästa alternativ och spara pengar!" />
+        <title>Jämför hemförsäkringar för husägare 2026</title>
+        <meta name="description" content="Jämför hemförsäkringar ✓ Skydda ditt hem 2026 ✓ Hitta bästa priset och täckningen för nya husägare." />
         <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
         <link rel="canonical" href="https://hemguiden.vercel.app" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Hemförsäkring för nyblivna husägare 2026" />
-        <meta property="og:description" content="Skydda ditt nya hem med rätt hemförsäkring ✓ Jämför 2026 års bästa alternativ och spara pengar!" />
+        <meta property="og:title" content="Jämför hemförsäkringar för husägare 2026" />
+        <meta property="og:description" content="Jämför hemförsäkringar ✓ Skydda ditt hem 2026 ✓ Hitta bästa priset och täckningen för nya husägare." />
         <meta property="og:url" content="https://hemguiden.vercel.app" />
         <meta property="og:locale" content="sv_SE" />
-        <meta property="og:site_name" content="HEMguiden" />
-        <meta property="og:image" content="https://hemguiden.vercel.app/api/og?title=Hemf%C3%B6rs%C3%A4kring%20f%C3%B6r%20nyblivna%20hus%C3%A4gare%202026&niche=försäkring" />
+        <meta property="og:site_name" content="Hemguiden" />
+        <meta property="og:image" content="https://hemguiden.vercel.app/api/og?title=J%C3%A4mf%C3%B6r%20hemf%C3%B6rs%C3%A4kringar%20f%C3%B6r%20hus%C3%A4gare%202026&niche=försäkring" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hemförsäkring för nyblivna husägare 2026" />
-        <meta name="twitter:description" content="Skydda ditt nya hem med rätt hemförsäkring ✓ Jämför 2026 års bästa alternativ och spara pengar!" />
-        <meta name="twitter:image" content="https://hemguiden.vercel.app/api/og?title=Hemf%C3%B6rs%C3%A4kring%20f%C3%B6r%20nyblivna%20hus%C3%A4gare%202026&niche=försäkring" />
+        <meta name="twitter:title" content="Jämför hemförsäkringar för husägare 2026" />
+        <meta name="twitter:description" content="Jämför hemförsäkringar ✓ Skydda ditt hem 2026 ✓ Hitta bästa priset och täckningen för nya husägare." />
+        <meta name="twitter:image" content="https://hemguiden.vercel.app/api/og?title=J%C3%A4mf%C3%B6r%20hemf%C3%B6rs%C3%A4kringar%20f%C3%B6r%20hus%C3%A4gare%202026&niche=försäkring" />
         <link rel="alternate" hreflang="sv" href="https://hemguiden.vercel.app" />
         <link rel="alternate" hreflang="x-default" href="https://hemguiden.vercel.app" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -116,7 +116,7 @@ export default function Home({ providers, year, month, updated }) {
         height:60, display:'flex', alignItems:'center', justifyContent:'space-between',
         position:'sticky', top:0, zIndex:100, fontFamily:'Inter,sans-serif' }}>
         <Link href="/" style={{ fontWeight:800, fontSize:18, color:pc, textDecoration:'none' }}>
-          HEMguiden
+          Hemguiden
         </Link>
         <div style={{ display:'flex', gap:28, fontSize:14 }}>
           <a href="#jamfor" style={{ color:'#64748b', textDecoration:'none' }}>Jämförelse</a>
@@ -144,16 +144,16 @@ export default function Home({ providers, year, month, updated }) {
             </div>
             <h1 style={{ fontSize:'clamp(26px,4vw,46px)', fontWeight:800,
               lineHeight:1.14, marginBottom:18, color:'#0f172a' }}>
-              Hemförsäkring 2026 för nyblivna husägare
+              Hemförsäkring för nyblivna husägare 2026
             </h1>
             <p style={{ fontSize:18, color:'#475569', lineHeight:1.72,
               marginBottom:32, maxWidth:540 }}>
-              Jämför hemförsäkringar från ledande leverantörer för att skydda ditt nya hem.
+              Jämför bästa hemförsäkringarna för husägare och hitta bästa priset.
             </p>
             <a href="#jamfor" style={{ display:'inline-block', background:pc, color:'#fff',
               padding:'14px 32px', borderRadius:10, fontWeight:700, fontSize:16,
               textDecoration:'none', boxShadow:'0 4px 24px '+pc+'44' }}>
-              Jämför och spara →
+              Jämför nu →
             </a>
             <p style={{ marginTop:14, fontSize:13, color:'#94a3b8' }}>
               Gratis &middot; Oberoende &middot; Ingen prenumeration
@@ -167,7 +167,7 @@ export default function Home({ providers, year, month, updated }) {
         padding:'16px 20px', fontFamily:'Inter,sans-serif' }}>
         <div style={{ maxWidth:960, margin:'0 auto', display:'flex',
           gap:32, flexWrap:'wrap', justifyContent:'center', alignItems:'center' }}>
-          <div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#15803d',fontWeight:800,flexShrink:0}}>✓</span><span>Omfattande skydd</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#15803d',fontWeight:800,flexShrink:0}}>✓</span><span>Flexibla villkor</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#15803d',fontWeight:800,flexShrink:0}}>✓</span><span>Konkurrenskraftiga priser</span></div>
+          <div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#15803d',fontWeight:800,flexShrink:0}}>✓</span><span>Skyddar ditt hem</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#15803d',fontWeight:800,flexShrink:0}}>✓</span><span>Täcker personligt lösöre</span></div><div style={{display:'flex',alignItems:'flex-start',gap:8,fontSize:14,color:'#374151'}}><span style={{color:'#15803d',fontWeight:800,flexShrink:0}}>✓</span><span>Minskar ekonomisk risk</span></div>
         </div>
       </div>
 
@@ -202,6 +202,11 @@ export default function Home({ providers, year, month, updated }) {
                 <div style={{ width:44, height:44, borderRadius:12, background: i===0 ? pcLight : '#f8fafc', display:'flex', alignItems:'center', justifyContent:'center', fontWeight:800, fontSize:16, color: i===0 ? pc : '#64748b', flexShrink:0, border:'1px solid '+(i===0 ? pcMed : '#e2e8f0') }}>
                   {['1','2','3','4','5'][i] || (i+1)}
                 </div>
+                {p.image && (
+                  <div style={{ width:72, height:72, flexShrink:0, borderRadius:10, background:'#f8fafc', border:'1px solid #e2e8f0', display:'flex', alignItems:'center', justifyContent:'center', overflow:'hidden' }}>
+                    <img src={p.image} alt={p.name} style={{ maxWidth:68, maxHeight:68, objectFit:'contain' }} onError={function(e){e.target.style.display='none';}} />
+                  </div>
+                )}
                 <div style={{ flex:1, minWidth:200 }}>
                   <div style={{ fontWeight:800, fontSize:18, color:'#0f172a', marginBottom:3 }}>{p.name}</div>
                   <div style={{ fontSize:13, color:'#64748b', marginBottom:10 }}>{p.description}</div>
@@ -211,7 +216,7 @@ export default function Home({ providers, year, month, updated }) {
                   <div style={{ fontSize:22, fontWeight:800, color:pc }}>{p.currentPrice || p.price}</div>
                   <Stars score={p.score} />
                   <div style={{ background:'#f0fdf4', color:'#15803d', fontSize:11, fontWeight:700, padding:'3px 10px', borderRadius:8 }}>{p.badge}</div>
-                  <AffBtn url={p.url} name={p.name} primary={i===0} />
+                  <AffBtn url={p.url} name={p.name} primary={i===0} network={p.network} />
                   <button onClick={() => toggleSelect(p.name)} style={{ padding:'7px 14px', borderRadius:8, fontSize:12, fontWeight:600, cursor: selected.includes(p.name) || selected.length < 3 ? 'pointer' : 'not-allowed', fontFamily:'Inter,sans-serif', border:'1px solid', borderColor: selected.includes(p.name) ? pc : '#e2e8f0', background: selected.includes(p.name) ? pcLight : '#fff', color: selected.includes(p.name) ? pc : '#64748b', opacity: !selected.includes(p.name) && selected.length >= 3 ? 0.4 : 1 }}>
                     {selected.includes(p.name) ? '✓ Vald' : '+ Jämför'}
                   </button>
@@ -321,7 +326,7 @@ export default function Home({ providers, year, month, updated }) {
                       </div>
                     )}
                     <div style={{ marginTop:'auto', paddingTop:10 }}>
-                      <AffBtn url={p.url} name={p.name} primary={true} />
+                      <AffBtn url={p.url} name={p.name} primary={true} network={p.network} />
                     </div>
                   </div>
                 );})}
@@ -346,17 +351,17 @@ export default function Home({ providers, year, month, updated }) {
         fontFamily:'Inter,sans-serif' }}>
         <div style={{ maxWidth:760, margin:'0 auto' }}>
           <h2 style={{ fontSize:28, fontWeight:800, marginBottom:20, color:'#0f172a' }}>
-            Så väljer du
+            Välj rätt försäkring
           </h2>
           <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>
-            Att välja rätt hemförsäkring kan kännas överväldigande, men med några enkla steg kan du hitta ett alternativ som passar just dina behov. Börja med att identifiera vad som är viktigast för dig i en försäkring. Behöver du extra skydd för särskilt värdefulla föremål eller omfattande ansvarsskydd? Nästa steg är att samla in offerter från olika försäkringsbolag och jämföra deras villkor och priser. Tänk på att den billigaste försäkringen inte alltid är det bästa valet om den inte erbjuder tillräckligt skydd. Läs också recensioner och kundomdömen för att få en bild av hur bolagen hanterar skadeärenden och kundservice. När du väl har valt en försäkring, se till att du förstår alla villkor och undantag innan du skriver under avtalet. En genomtänkt hemförsäkring ger dig trygghet och skydd mot oväntade händelser.
+            När du köper ett hus är det viktigt att välja rätt hemförsäkring för att skydda din investering. Det finns flera faktorer att överväga när du väljer en hemförsäkring. För det första bör du tänka på vilken typ av täckning du behöver. Vissa försäkringar erbjuder grundläggande skydd, medan andra kan inkludera extra tillägg som ger ytterligare skydd för ditt hem. Det är också viktigt att överväga kostnaden för försäkringen och att jämföra premier från olika leverantörer. Var noga med att läsa villkoren noggrant och förstå vad som ingår i policyn. Ytterligare faktorer att tänka på inkluderar självrisk, täckningsområden och om försäkringen täcker tillfälligt boende om ditt hem blir obeboeligt på grund av skada. Genom att göra en noggrann jämförelse och förstå dina behov kan du välja en hemförsäkring som ger dig trygghet och ekonomiskt skydd.
           </p>
           <h3 style={{ fontSize:22, fontWeight:700, marginBottom:16, color:'#0f172a', marginTop:40 }}>Vanliga misstag</h3>
-          <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>Ett vanligt misstag som många gör när de tecknar hemförsäkring är att inte läsa det finstilta i avtalet. Det är viktigt att du förstår vad som ingår och vilka undantag som finns för att undvika obehagliga överraskningar vid en skada. Ett annat misstag är att undervärdera värdet på dina ägodelar. Se till att du har tillräckligt skydd för alla dina tillhörigheter. Många glömmer också att uppdatera sin försäkring vid stora förändringar, såsom renoveringar eller inköp av dyra föremål, vilket kan lämna dem underförsäkrade. Slutligen är det lätt att fastna i tanken att den billigaste försäkringen är bäst. Det är viktigt att balans mellan pris och täckning uppnås för att säkerställa fullständigt skydd.</p>
+          <p style={{ fontSize:16, lineHeight:1.85, color:'#374151', marginBottom:28 }}>Det är lätt att göra misstag när man tecknar en hemförsäkring. Ett vanligt misstag är att underskatta värdet av dina ägodelar och därför välja en försäkring med för låg täckning. Ett annat misstag är att inte läsa villkoren noggrant, vilket kan leda till överraskningar när du behöver göra en anspråk. Många glömmer också att uppdatera sin försäkring när de gör förändringar i hemmet, såsom renoveringar eller stora inköp. Slutligen, att inte jämföra olika försäkringsbolag kan göra att du betalar mer än nödvändigt för din försäkring.</p>
           <h3 style={{ fontSize:20, fontWeight:700, marginBottom:24, color:'#0f172a' }}>
             Vad ska du tänka på?
           </h3>
-          <div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>1</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Läs alltid det finstilta</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>2</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Uppdatera försäkringen regelbundet</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>3</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Jämför flera offerter</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>4</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Prioritera rätt skyddsnivå</p></div>
+          <div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>1</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Jämför flera försäkringar</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>2</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Läs villkoren noggrant</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>3</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Uppdatera vid förändringar</p></div><div style={{display:'flex',gap:14,alignItems:'flex-start',marginBottom:16}}><div style={{width:28,height:28,borderRadius:'50%',background:'#15803d15',color:'#15803d',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,fontSize:13,flexShrink:0}}>4</div><p style={{color:'#374151',lineHeight:1.7,fontSize:15}}>Beräkna värdet rätt</p></div>
         </div>
       </section>
 
@@ -365,7 +370,7 @@ export default function Home({ providers, year, month, updated }) {
         <h2 style={{ fontSize:26, fontWeight:800, marginBottom:32, color:'#0f172a' }}>
           Vanliga frågor
         </h2>
-        <details style={{borderBottom:'1px solid #e2e8f0',paddingBottom:16,marginBottom:16}} open={false}><summary style={{fontWeight:700,fontSize:15,cursor:'pointer',color:'#0f172a',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}>Vilken hemförsäkring är bäst i Sverige?<span style={{color:'#15803d',fontSize:18,fontWeight:400}}>+</span></summary><p style={{marginTop:12,color:'#475569',lineHeight:1.75,fontSize:14}}>Det beror på dina specifika behov och budget. Jämför olika försäkringsbolags erbjudanden och läs kundrecensioner.</p></details>
+        <details style={{borderBottom:'1px solid #e2e8f0',paddingBottom:16,marginBottom:16}} open={false}><summary style={{fontWeight:700,fontSize:15,cursor:'pointer',color:'#0f172a',listStyle:'none',display:'flex',justifyContent:'space-between',alignItems:'center'}}>Vilken hemförsäkring är bäst för husägare?<span style={{color:'#15803d',fontSize:18,fontWeight:400}}>+</span></summary><p style={{marginTop:12,color:'#475569',lineHeight:1.75,fontSize:14}}>Det beror på dina behov och budget. Jämför olika försäkringar och läs recensioner för att hitta den bästa för dig.</p></details>
       </section>
 
       <section style={{ background:'#f8fafc', borderTop:'1px solid #e2e8f0', padding:'32px 20px', fontFamily:'Inter,sans-serif' }}>
@@ -385,7 +390,7 @@ export default function Home({ providers, year, month, updated }) {
         <div style={{ maxWidth:980, margin:'0 auto' }}>
           <div style={{ display:'flex', gap:48, flexWrap:'wrap', marginBottom:36 }}>
             <div style={{ maxWidth:260 }}>
-              <div style={{ fontWeight:800, color:'#fff', fontSize:18, marginBottom:10 }}>HEMguiden</div>
+              <div style={{ fontWeight:800, color:'#fff', fontSize:18, marginBottom:10 }}>Hemguiden</div>
               <p style={{ fontSize:13, lineHeight:1.75 }}>
                 Oberoende jämförelsetjänst för svenska konsumenter. Vi jämför 7 alternativ inom försäkring.
               </p>
@@ -413,9 +418,9 @@ export default function Home({ providers, year, month, updated }) {
             <div>
               <div style={{ fontWeight:700, color:'#e2e8f0', marginBottom:14, fontSize:12, textTransform:'uppercase', letterSpacing:'0.5px' }}>Jämförelser</div>
               <div style={{ display:'flex', flexDirection:'column', gap:10, fontSize:14 }}>
-                <Link href="/jamfor/folksam-vs-lansforsakringar" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Folksam vs Länsförsäkringar</Link>
+                <Link href="/jamfor/folksam-vs-if-forsakring" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Folksam vs IF Försäkring</Link>
                 <Link href="/jamfor/folksam-vs-trygg-hansa" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Folksam vs Trygg-Hansa</Link>
-                <Link href="/jamfor/folksam-vs-if-skadeforsakring" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Folksam vs If Skadeförsäkring</Link>
+                <Link href="/jamfor/folksam-vs-lansforsakringar" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Folksam vs Länsförsäkringar</Link>
                 <Link href="/jamfor/folksam-vs-moderna-forsakringar" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Folksam vs Moderna Försäkringar</Link>
                 <Link href="/jamfor/folksam-vs-dina-forsakringar" style={{color:'#94a3b8',textDecoration:'none',fontSize:13}}>Folksam vs Dina Försäkringar</Link>
               </div>
@@ -423,7 +428,7 @@ export default function Home({ providers, year, month, updated }) {
           </div>
           <div style={{ borderTop:'1px solid #1e293b', paddingTop:24, fontSize:12, lineHeight:1.75 }}>
             <p style={{ marginBottom:8 }}>
-              &copy; {year} HEMguiden. Oberoende jämförelsetjänst utan koppling till listade
+              &copy; {year} Hemguiden. Oberoende jämförelsetjänst utan koppling till listade
               varumärken utöver eventuella affiliate-provisioner.
             </p>
             <p>
